@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export function CTA() {
   return (
@@ -15,10 +16,10 @@ export function CTA() {
             </p>
           </div>
           <div className="flex flex-col gap-2 min-[400px]:flex-row">
-            <Button size="lg" variant="secondary" onClick={() => window.location.href = '/signup'}>
-              Start Your Free Trial
+            <Button size="lg" variant="secondary" asChild>
+              <Link to="/signup">Start Your Free Trial</Link>
             </Button>
-            <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10" onClick={() => window.location.href = '#how-it-works'}>
+            <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10" onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}>
               Schedule a Demo
             </Button>
           </div>
